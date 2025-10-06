@@ -10,6 +10,7 @@ dotenv.config();
 
 // Create Express app
 const app = express();
+const PORT = process.env.PORT || 5176;
 
 // Middleware
 app.use(cors());
@@ -21,7 +22,7 @@ mongoose.connect(mongoURI)
 .then(() => console.log('Connected to MongoDB Atlas'))
 .catch((err) => console.error('MongoDB connection error:', err));
 
-app.listen(5176, () => {
+app.listen(PORT, () => {
   console.log('Server is running on http://localhost:5176');
 });
 
